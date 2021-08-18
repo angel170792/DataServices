@@ -1,0 +1,7 @@
+Invoking Maven for the goals: [org.apache.maven.plugins:maven-javadoc-plugin:3.0.1:javadoc] with no properties
+
+M2_HOME=/Users/angel.solorzano/eclipse-workspace/data-services-parent/EMBEDDED
+MAVEN_OPTS=null
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/jre
+JAVA_OPTS=null
+
