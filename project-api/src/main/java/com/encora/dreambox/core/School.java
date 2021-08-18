@@ -22,7 +22,7 @@ public class School {
 	private String schoolName;
 
 	@OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
-	@JsonIgnoreProperties("school")
+	@JsonIgnoreProperties(value = {"school"}, allowSetters = true)
 	private List<Student> students;
 
 	public School() {
