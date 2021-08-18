@@ -27,17 +27,18 @@ public class Student {
 
 	@ManyToOne
 	@JoinColumn(name = "school_id")
-	@JsonIgnoreProperties(value = {"students"}, allowSetters = true)
+	@JsonIgnoreProperties(value = { "students" }, allowSetters = true)
 	private School school;
 
 	public Student() {
 
 	}
 
-	public Student(String id, String name, String age, String grade, School school) {
+	public Student(String id, String name, String lastName, String age, String grade, School school) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.lastName = lastName;
 		this.age = age;
 		this.grade = grade;
 		this.school = school;
