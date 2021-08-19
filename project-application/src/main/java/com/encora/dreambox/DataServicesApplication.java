@@ -2,6 +2,8 @@ package com.encora.dreambox;
 
 import com.encora.dreambox.dao.SchoolDao;
 import com.encora.dreambox.dao.StudentDao;
+import com.encora.dreambox.dao.impl.SchoolDaoImpl;
+import com.encora.dreambox.dao.impl.StudentDaoImpl;
 import com.encora.dreambox.resources.SchoolResource;
 import com.encora.dreambox.resources.StudentResource;
 
@@ -37,8 +39,8 @@ public class DataServicesApplication extends Application<DataServicesConfigurati
 
 	@Override
 	public void run(final DataServicesConfiguration configuration, final Environment environment) {
-		final SchoolDao schoolDao = new SchoolDao(hibernate.getSessionFactory());
-		final StudentDao studentDao = new StudentDao(hibernate.getSessionFactory());
+		final SchoolDao schoolDao = new SchoolDaoImpl(hibernate.getSessionFactory());
+		final StudentDao studentDao = new StudentDaoImpl(hibernate.getSessionFactory());
 		final SchoolResource schoolResource = new SchoolResource(schoolDao);
 		final StudentResource studentResource = new StudentResource(studentDao);
 		environment.jersey().register(schoolResource);

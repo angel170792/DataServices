@@ -20,7 +20,7 @@ public class StudentResource {
 		super();
 		this.studentDao = studentDao;
 	}
-	
+
 	@GET
 	@Path("/{id}")
 	@UnitOfWork
