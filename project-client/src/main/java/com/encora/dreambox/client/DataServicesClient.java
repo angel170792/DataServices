@@ -1,32 +1,12 @@
 package com.encora.dreambox.client;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.core.MediaType;
-
-import org.glassfish.jersey.client.JerseyClientBuilder;
-
-import com.encora.dreambox.client.util.enums.DataServiceModulesEnum;
 import com.encora.dreambox.core.School;
 import com.encora.dreambox.core.Student;
 
-public class DataServicesClient {
+public interface DataServicesClient {
 
-	private static final String URL = "http://localhost:8080/dsapi/%s/%s";
+	School findSchoolById(String id);
 
-	private Client client;
-
-	public DataServicesClient() {
-		this.client = new JerseyClientBuilder().build();
-	}
-
-	public School findSchoolById(String id) {
-		return this.client.target(String.format(URL, DataServiceModulesEnum.SCHOOL.toString(), id))
-				.request(MediaType.APPLICATION_JSON).get(School.class);
-	}
-
-	public Student findStudentById(String id) {
-		return this.client.target(String.format(URL, DataServiceModulesEnum.STUDENT.toString(), id))
-				.request(MediaType.APPLICATION_JSON).get(Student.class);
-	}
+	Student findStudentById(String id);
 
 }
